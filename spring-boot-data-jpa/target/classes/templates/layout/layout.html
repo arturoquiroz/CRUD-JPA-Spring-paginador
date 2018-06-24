@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+<meta charset="UTF-8"></meta>
+<title th:text="'Spring Boot: MVC + Thymeleaf + JPA'+${titulo}"></title>
+<link rel="stylesheet"
+	th:href="@{/css/bootstrap.min.css}">
+</link>
+</head>
+<body>
+	<header th:fragment="header">
+		<nav class="nav nav-pills flex-column flex-sm-row">
+			<a class="flex-sm-fill text-sm-center nav-link active" href="#">Active</a>
+			<a class="flex-sm-fill text-sm-center nav-link" th:href="@{/listar}">Clientes</a>
+			<a class="flex-sm-fill text-sm-center nav-link" href="#">Link</a> <a
+				class="flex-sm-fill text-sm-center nav-link disabled" href="#">Disabled</a>
+		</nav>
+		<div class="alert alert-success" th:if="${success != null}" th:text="${success}"></div>
+		<div class="alert alert-danger" th:if="${error != null}" th:text="${error}"></div>
+		<div class="alert alert-warning" th:if="${warning != null}" th:text="${warning}"></div>
+		<div class="alert alert-info" th:if="${info != null}" th:text="${info}"></div>
+	</header>
+	<div class="container"></div>
+	<footer th:fragment="footer" class="container">
+		<br /> <img th:src="@{/imagenes/springicono.jpg}" alt="Spring logo"></img>
+		<p>
+			Powered by <a href="https://spring.io/">Spring Boot </a> y <a
+				href="https://www.thymeleaf.org/">Thymeleaf</a>
+		</p>
+		<!-- Opcional, scripts de jquery y bootstrap -->
+		<script th:src="@{/js/jquery-3.3.1.js}"></script>
+		<script
+			th:src="@{/js/bootstrap.min.js}">
+			
+		</script>
+	</footer>
+</body>
+</html>
